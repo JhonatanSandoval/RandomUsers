@@ -1,4 +1,4 @@
-package pe.jsandoval.randomusers.data.remote
+package pe.jsandoval.randomusers.data.remote.util
 
 import okhttp3.Interceptor
 import okhttp3.Response

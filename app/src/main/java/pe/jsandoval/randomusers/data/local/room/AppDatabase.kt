@@ -6,10 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import pe.jsandoval.randomusers.data.local.room.dao.UserDao
 import pe.jsandoval.randomusers.data.local.room.entity.UserEntity
+import pe.jsandoval.randomusers.util.AppConstants
 
 @Database(
     exportSchema = false,
-    version = 1,
+    version = AppConstants.ROOM_DB_VERSION,
     entities = [UserEntity::class]
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -29,7 +30,7 @@ abstract class AppDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext, AppDatabase::class.java,
-                    "RandomUsers_Room"
+                    AppConstants.ROOM_DB_NAME
                 ).build()
                 INSTANCE = instance
                 return instance

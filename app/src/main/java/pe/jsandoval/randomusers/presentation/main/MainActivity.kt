@@ -44,6 +44,7 @@ class MainActivity : BaseActivity(), UserAdapter.Companion.Listener {
         }
         viewModel.errorMessage.observeNotNull {
             Timber.e(it)
+            srUsers.isRefreshing = false
         }
     }
 

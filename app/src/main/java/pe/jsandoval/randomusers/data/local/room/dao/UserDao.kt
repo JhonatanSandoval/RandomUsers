@@ -1,6 +1,5 @@
 package pe.jsandoval.randomusers.data.local.room.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -13,7 +12,7 @@ interface UserDao {
     fun insertUser(userEntity: UserEntity)
 
     @Query("SELECT * FROM users WHERE uuid = :uuid")
-    fun getUser(uuid: String): LiveData<UserEntity>
+    fun getUser(uuid: String): UserEntity
 
     @Query("SELECT * FROM users")
     fun get(): List<UserEntity>

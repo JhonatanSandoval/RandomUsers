@@ -1,32 +1,33 @@
 package pe.jsandoval.randomusers.data.remote.response
 
+import com.google.gson.annotations.SerializedName
 import pe.jsandoval.randomusers.data.local.room.entity.UserEntity
 
 data class UsersResultResponse(
-    val results: List<UserResponse> = arrayListOf()
+    @SerializedName("results") val results: List<UserResponse> = arrayListOf()
 )
 
 data class UserResponse(
-    val login: UserLoginResponse? = null,
-    val name: UserMainInfoResponse? = null,
-    val gender: String,
-    val email: String,
-    val picture: UserPictureInfoResponse? = null
+    @SerializedName("login") val login: UserLoginResponse? = null,
+    @SerializedName("name") val name: UserMainInfoResponse? = null,
+    @SerializedName("gender") val gender: String,
+    @SerializedName("email") val email: String,
+    @SerializedName("picture") val picture: UserPictureInfoResponse? = null
 )
 
 data class UserLoginResponse(
-    val uuid: String
+    @SerializedName("uuid") val uuid: String
 )
 
 data class UserPictureInfoResponse(
-    val large: String,
-    val medium: String,
-    val thumbnail: String
+    @SerializedName("large") val large: String,
+    @SerializedName("medium") val medium: String,
+    @SerializedName("thumbnail") val thumbnail: String
 )
 
 data class UserMainInfoResponse(
-    val first: String,
-    val last: String
+    @SerializedName("first") val first: String,
+    @SerializedName("last") val last: String
 )
 
 fun UserResponse.transformToLocal(): UserEntity =

@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import pe.jsandoval.randomusers.BuildConfig
 import pe.jsandoval.randomusers.data.remote.Api
-import pe.jsandoval.randomusers.data.remote.AppInterceptor
+import pe.jsandoval.randomusers.data.remote.util.AppInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
